@@ -3,7 +3,8 @@
 ### Date created
 May 21st, 2022
 
-
+#Date started on project
+NanoDegree started in January 2022
 
 ### Project Title
 Bike Share Project NanoDegree
