@@ -22,6 +22,7 @@ def get_filters():
     #lower is used to get input in any format
 
     while(True):
+        #filter city to include all
         if city in ('chicago', 'new york','washington','all'):
             break
         else:
@@ -32,6 +33,7 @@ def get_filters():
      #lower is used to get input in any format
 
     while(True):
+        #filter month on month
         if month in ('january','february', 'march','april','may','june','all'):
             break
         else:
@@ -71,12 +73,12 @@ def load_data(city, month, day):
     if month != 'all':
         months = ['january', 'february', 'march', 'april', 'may', 'june']
         #used to find index of month.
-        month = months.index(month) + 1       
+        month = months.index(month) + 1
 
         df = df[df['Start Time'].dt.month == month]
 
     #filter data by day.
-    if day != 'all': 
+    if day != 'all':
         df = df[df['Start Time'].dt.weekday_name == day.title()]
      #print 5 rows.
     print(df.head())
@@ -192,8 +194,8 @@ def user_stats(df):
         recent_year = df['Birth Year'].max()
         most_common_birth_year = df['Birth Year'].mode()[0]
         print('\n Oldest Birth Year is {}\n Youngest Birth Year is {}\n Most popular Birth Year is {}\n'.format(int(earliest_year), int(recent_year), int(most_common_birth_year)))
-    #ask user if he wants to display raw data and print 5 rows at a time    
-    
+    #ask user if he wants to display raw data and print 5 rows at a time
+
     view_data = input('\nWould you like to view 5 rows of individual trip data? Enter yes or no\n')
     if view_data.lower() == 'yes':
         start_loc=0
@@ -203,13 +205,13 @@ def user_stats(df):
                 ask = input("Do you wish to continue with another 5 rows?: ").lower()
                 if ask.lower()!='yes':
                     break
-         
-            
-   
-       
+
+
+
+
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
-    
+
 def main():
     while True:
         city, month, day = get_filters()
@@ -227,8 +229,8 @@ def main():
 
 if __name__ == "__main__":
 	main()
-    
-    #repos used 
+
+    #repos used
     #https://github.com/nidhikapoor21/Explore-US-Bikeshare-Data/blame/master/bikeshare_2.py, https://github.com/khaledimad/Explore-US-Bikeshare-Data/blob/master/bikeshare_2.py#L108, https://www.delftstack.com/howto/python/python-datetime-day-of-week/#:~:text=of%20the%20day.-,Use%20the%20weekday()%20Method%20to%20Get%20the%20Name%20of,0%20and%20Sunday%20is%206.
 
 #https://appdividend.com/2019/01/28/python-mode-function-example-python-statistics-tutorial/#:~:text=The%20mode%20is%20a%20value,in%20a%20set%20of%20numbers.
