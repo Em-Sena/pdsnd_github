@@ -26,7 +26,7 @@ def get_filters():
         if city in ('chicago', 'new york','washington','all'):
             break
         else:
-            city = input('Enter Correct city: ').lower()
+            city = input('Enter Correct city: \n').lower()
              #lower is used to get input in any format
     # get user input for month (all, january, february, ... , june)
     month = input('\nWhich month would you like to see data from? January, February, March, April, May, or June?\n').lower()
