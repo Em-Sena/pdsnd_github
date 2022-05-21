@@ -33,6 +33,7 @@ def get_filters():
      #lower is used to get input in any format
 
     while(True):
+        #filter month on month
         if month in ('january','february', 'march','april','may','june','all'):
             break
         else:
